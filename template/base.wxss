@@ -1,0 +1,10 @@
+.text-recommend {
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 50rpx 40rpx;
+  
+}
+.text-list {
+  width: 670rpx;
+  display: flex;
+}

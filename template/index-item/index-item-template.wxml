@@ -1,0 +1,43 @@
+<template name="index-template">
+  <text class="text-title">{{cnName}}</text>
+  <!-- 自定义参数 data- 为前缀-->
+    <view
+      class="text-list"
+      wx:for="{{fragments}}"
+      wx:for-item="val"
+      wx:key="{{index}}"
+      data-postndynam
+      data-id="{{index}}"        
+      bindtap="bindViewTap"
+    >
+      <view
+      class="text-images"
+        wx:for="{{val.basicRelation.attributes}}"
+        wx:for-item="res"
+        wx:key="{{index}}"
+        wx:if="{{res.id == 159}}" 
+      >
+        <image src="{{res.fragments[0].resource.uri}}"></image>
+      </view>
+      <view class='text-prop'>
+        <view
+          class='text-title-prop'
+          wx:for="{{val.basicRelation.attributes}}"
+          wx:for-item="title"
+          wx:key="{{index}}"
+          wx:if="{{title.id == 186}}" 
+        >
+          <text>{{title.fragments[0].content}}</text>
+        </view>
+        <view
+         class="text-info-content"
+          wx:for="{{val.basicRelation.attributes}}"
+          wx:for-item="content"
+          wx:key="{{index}}"
+          wx:if="{{content.id == 213}}" 
+        >
+          <text>{{content.fragments[0].content}}</text>
+        </view>
+      </view>
+    </view>
+</template>

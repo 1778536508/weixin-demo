@@ -1,0 +1,37 @@
+.text-title {
+  color: #1B1B1B;
+  font-size: 24rpx;
+}
+.text-list {
+  margin-top: 40rpx;
+}
+.text-list:hover {
+  background:#FCFCFC;
+}
+.text-prop {
+  margin-left: 20rpx;
+}
+.text-title-prop {
+  margin-top: 19rpx;
+  font-size: 30rpx;
+  color: #1B1B1B;
+  line-height: 42rpx;
+  font-weight: 600;
+}
+.text-info-content {
+  font-size: 20rpx;
+  color: #AAAAAA;
+  margin-top: 12rpx;
+  line-height: 30rpx;
+  letter-spacing: 1rpx;
+}
+.text-images {
+  width: 276rpx;
+  height: 152rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+.text-images image {
+  width: 300rpx;
+  height: 100%;
+}

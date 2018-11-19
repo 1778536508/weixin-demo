@@ -1,0 +1,134 @@
+<!-- 引用模板绝对路径 / 相对路径 都可以  -->
+<import src="/template/index-item/index-item-template.wxml"/>
+<import src="/template/list-item/list-item-template.wxml"/>
+<import src="/template/progress-item/progress-item-template.wxml"/>
+<scroll-view>  
+ 
+<view style="height: 10rpx;">
+<template is="progress-item"></template>
+</view>
+<view class="icon-img">
+  <image src="/pages/index/images/iphone.jpg" class="icon-iphone" bindtap="iphoneBtn"></image>
+  <text class="num-power">{{power}}</text>
+  <image src="/pages/index/images/sao.jpg" class="icon-sao" bindtap="saoBtn"></image>
+</view>
+<!-- 头图幻灯片 -->
+  <view>
+    <swiper 
+    wx:for="{{json.data.attributes}}" 
+    wx:for-item="item" 
+    wx:for-index="index"
+    wx:if="{{item.id == 159}}" 
+    class="swiper-each" 
+    indicator-dots
+    autoplay="{{swiperAutoplay}}"
+    circular
+    interval="5000"
+    wx:key="{{index}}"
+    indicator-active-color="rgba(255,255,255,.8)">
+      <swiper-item 
+      wx:for="{{item.fragments}}" 
+      wx:for-item="val" 
+      wx:for-index="idx"
+      wx:key="{{idx}}">
+        <image src="{{val.resource.uri}}" class="swiper-image" bindtag="btnVideo"></image>
+        <view class="vide-btn">
+          <view class="vide-strt" bindtap="btnVideo" data-arrId="{{idx}}">
+            <view class="vide-grod"></view>
+          </view>
+          <view class="videBtn-left">
+            <image src="/pages/index/images/Group.png"></image>
+          </view>
+          <view class="videBtn-right">
+             <image src="/pages/index/images/grof.png"></image>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+    <video 
+      wx:if="{{dataStatus}}"
+      class='video-admin'
+      src='{{videocNname}}'
+      autoplay="{{autoplay}}"
+      loop
+      page-gesture="true"
+      bindpause="bindpause"
+    ></video>
+    
+  </view> 
+  <!-- 标题与简介 -->
+  <view class='font-text-content'>
+    <view
+     class="text-h2"
+     wx:for="{{json.data.attributes}}"
+     wx:if="{{item.id == 186}}"
+     wx:key="{{index}}"
+    >
+      <text>{{item.fragments[0].content}}</text>
+      <icon class="{{fontAwesome}} fontAudioimage" bindtap="btnbackgroundAuto"></icon>
+      <image src="http://static.kgimg.com/public/root/images/logo.png" style="width: 150rpx; height: 35rpx;" class="{{faSpin}}"></image>
+    </view>
+    <view
+      class="text-date"
+      wx:for="{{json.data.attributes}}"
+      wx:if="{{item.id == 256}}"
+      wx:key="{{index}}"
+    >
+      <label>{{item.cnName}}</label>
+      <text>{{item.fragments[0].content}}</text>
+    </view>
+    <view
+      class="text-content"
+      wx:for="{{json.data.attributes}}"
+      wx:if="{{item.id == 215}}"
+      wx:key="{{index}}"
+    >
+      <text>{{item.fragments[0].content}}</text>
+    </view>
+  </view>
+  <!-- 分享 -->
+  <view style="display: flex;">
+  <button type="success" size="mini" bindtap='getData'>获取数据</button>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}"  style='margin-left: auto;'>
+      <view class="picker">
+        <button size='mini' type="primary" open-type='share'>分享</button>{{array[index]}}
+      </view>
+    </picker>
+  </view>
+  <!-- 相关推荐 -->
+  <view 
+    class="text-recommend"
+    wx:for="{{json.data.attributes}}"
+    wx:if="{{item.id == 251}}"
+    wx:key="{{index}}"
+  >
+  <template is="index-template" data="{{...item}}"/>
+  </view>
+  <!-- 评论区 -->
+  <view class="text-recommend">
+    <view>
+      <text class="text-title">{{comment.name}}</text>
+    </view>
+    <view>
+      <view 
+        class='text-list recommend-list'
+        wx:for="{{comment.hbuider}}"
+        wx:key="{{index}}"
+      >
+       <template is="list-item" data="{{...item}}"/>
+      </view>
+    </view>
+  </view>
+  <!-- 输入评论 -->
+  <view class='input-box'>
+    <input type="text" placeholder='评论' value="{{commentContent.value}}" bindinput="bindinput"></input>
+    <button 
+      size="mini"
+      type="primary"
+      bindtap="BtnSendOut">发送</button>
+    <image src="/pages/index/images/bady.png" bindtap="collEction" wx:if="{{!modelImage}}"></image>
+    <image src="/pages/index/images/nice.png" bindtap="collEction" wx:else></image>
+  </view>
+  <view class="section">
+</view>
+</scroll-view>

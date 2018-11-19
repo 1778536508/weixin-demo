@@ -1,0 +1,4 @@
+@import "/template/base.wxss";
+@import "/template/index-item/index-item-template.wxss";
+@import "/template/list-item/list-item-template.wxss";
+@import "/template/progress-item/progress-item-template.wxss";

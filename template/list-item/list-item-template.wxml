@@ -1,0 +1,17 @@
+<template name="list-item">
+  <view class="recommend-image" wx:for="{{attbuider}}" wx:for-item="val" wx:for-index="i" wx:key="{{i}}" wx:if="{{val.id == 110}}">
+    <image src="{{val.frameuits.url}}"></image>
+  </view>
+  <view class='recommend-content'>
+    <view class='recommend-title' wx:for="{{attbuider}}" wx:for-item="val" wx:for-index="i" wx:key="{{i}}" wx:if="{{val.id == 111}}">
+      <text class="title">{{val.frameuits.title}}</text>
+      <text class="date">{{date}}</text>
+    </view>
+    <view wx:for="{{attbuider}}" wx:for-item="val" wx:for-index="i" wx:key="{{i}}" wx:if="{{val.id == 112}}">
+      <view class="recommend-contenttext">
+        <text>{{val.frameuits.conent}}</text>
+      </view>
+      <text class="recommend-reply">{{numage}}回复</text>
+    </view>
+  </view>
+</template>

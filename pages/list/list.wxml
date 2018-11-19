@@ -1,0 +1,32 @@
+
+<!-- 引用模板绝对路径 / 相对路径 都可以  -->
+<import src="/template/index-item/index-item-template.wxml"/>
+<import src="/template/list-item/list-item-template.wxml"/>
+<import src="/template/progress-item/progress-item-template.wxml"/>
+<view>
+ <!-- 相关推荐 -->
+ <template is="progress-item"></template>
+  <view 
+    class="text-recommend"
+    wx:for="{{json.data.attributes}}"
+    wx:if="{{item.id == 251 && codeId != 1}}"
+    wx:key="{{index}}"
+  >
+  <template is="index-template" data="{{...item}}"/>
+  </view>
+  <!-- 评论区 -->
+  <view class="text-recommend" wx:if="{{codeId == 1}}">
+    <view>
+      <text class="text-title">{{comment.name}}</text>
+    </view>
+    <view>
+      <view 
+        class='text-list recommend-list'
+        wx:for="{{comment.hbuider}}"
+        wx:key="{{index}}"
+      >
+       <template is="list-item" data="{{...item}}"/>
+      </view>
+    </view>
+  </view>
+</view>
