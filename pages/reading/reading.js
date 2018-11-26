@@ -55,8 +55,9 @@ Page({
    */
   httpRequest(msg, loding) {
     var _this = this;
+    console.log('https://gank.io/api/data/' + _this.data.keyword + '/' + _this.data.num + '/' + _this.data.page,)
     wx.request({
-      url: 'http://gank.io/api/data/' + _this.data.keyword + '/' + _this.data.num + '/' + _this.data.page,
+      url: 'https://gank.io/api/data/' + _this.data.keyword + '/' + _this.data.num + '/' + _this.data.page,
       data: {},
       header: {},
       method: 'GET',
@@ -107,7 +108,8 @@ Page({
           wx.stopPullDownRefresh();     // 下拉刷新停止
         }
         
-      },
+      },  
+      // 请求网络超时 / 无网络  
       fail: function (res) { },
       complete: function (res) {
         console.log('请求过数据')

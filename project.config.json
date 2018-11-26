@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -12,7 +12,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
-	"appid": "wx1956e7ede88d54a2",
+	"appid": "wx1a1d857839fdd440",
 	"projectname": "weixin-demo",
 	"debugOptions": {
 		"hidedInDevtools": []

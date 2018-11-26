@@ -1,8 +1,10 @@
 {
   "pages":[
+    "pages/douban/douban",
     "pages/index/index",
     "pages/reading/reading",
     "pages/logs/logs",
+    
     "pages/list/list",
     "pages/web-view/web-view"
   ],
@@ -17,6 +19,12 @@
     "borderStyle": "white",
     "position": "bottom",
     "list": [
+      {
+        "pagePath": "pages/douban/douban",
+        "text": "豆瓣影视",
+        "iconPath": "/images/list2.png",
+        "selectedIconPath": "/images/list.png"
+      },
       {
         "pagePath": "pages/index/index",
         "text": "首页",
@@ -34,12 +42,6 @@
         "text": "日志",
         "iconPath": "/images/rizi2.png",
         "selectedIconPath": "/images/rizi.png"
-      },
-      {
-        "pagePath": "pages/list/list",
-        "text": "分类",
-        "iconPath": "/images/list2.png",
-        "selectedIconPath": "/images/list.png"
       }
     ]
   }

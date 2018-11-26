@@ -1,0 +1,80 @@
+.douban-title {
+  font-size: 25px;
+  color: #27a;
+  line-height: 100rpx;
+  text-align: center;
+}
+.douban-movies {
+  width: 750rpx;
+  /* display: flex; */
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.douban-movies-row {
+  box-sizing: border-box;
+  padding: 0rpx 10rpx;
+  width: 250rpx;
+  font-size: 8px;
+  float: left;
+}
+
+.douban-movies-cover {
+  width: 100%;
+  height: 400rpx;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 10rpx;
+}
+.douban-movies-cover > image {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.douban-movies-rating > i {
+  color: rgba(243, 176, 75, 1);
+  margin-left: 2rpx;
+  
+}
+.douban-movies-character {
+  width: 100%;
+  height: 380rpx;
+}
+.douban-movies-character-list {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  
+}
+.douban-movies-character-list > image {
+  width: 30%;
+}
+.douban-movies-character-list-text {
+  box-sizing: border-box;
+  padding: 5rpx;
+  width: 70%;
+}
+.douban-movies-character-list-text > view {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 5rpx;
+  margin-left: 10rpx;
+}
+.douban-movies-character-list-text-brief {
+  display: inline-block;
+  background: #27a;
+  color: #fff;
+  padding: 5rpx 20rpx;
+  border-radius: 2rpx;
+}
+.douban-movies-character-image {
+  width: 100%;
+}
+.douban-movies-character-image image {
+  width: 100%;
+}
