@@ -1,0 +1,20 @@
+.welfare_title {
+  font-size: 25rpx;
+  color:rgba(208,25,99,.5);
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 10rpx;
+
+}
+.welfare_images {
+  display: block;
+  width: 750rpx;
+}
+.welfare_time {
+  width: 750rpx;
+  display: flex;
+  font-size: 25rpx;
+}
+.swiper {
+  height: 400rpx;
+}

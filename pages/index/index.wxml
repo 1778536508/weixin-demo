@@ -2,14 +2,36 @@
 <import src="/template/index-item/index-item-template.wxml"/>
 <import src="/template/list-item/list-item-template.wxml"/>
 <import src="/template/progress-item/progress-item-template.wxml"/>
-<scroll-view>  
+<scroll-view id="j_page"> 
+
+<!-- <view>-----------事件冒泡-------</view>
+<view bind:touchstart="bindTouchstartFather">
+  父级
+  <view>
+    <text bind:touchstart="bindTouchstartSon">子级冒泡</text>
+  </view>
+    <view>
+    <text catch:touchstart="catchTouchstartSon">子级阻止冒泡</text>
+  </view>
+</view> 
+
+  <view>-----------事件捕获-------</view>
+  <view capture-bind:touchstart="bindTouchstartFather">
+    父级捕获
+    <view>
+      <text capture-bind:touchstart="bindTouchstartSon">子级冒泡</text>
+    </view>
+     <view>
+      <text capture-catch:touchstart="catchTouchstartSon">子级阻止冒泡</text>
+    </view>
+  </view>  -->
  
 <view style="height: 10rpx;">
 <template is="progress-item"></template>
 </view>
 <view class="icon-img">
   <image src="/pages/index/images/iphone.jpg" class="icon-iphone" bindtap="iphoneBtn"></image>
-  <text class="num-power">{{power}}</text>
+  <text class="num-power">当前电量{{power}}</text>
   <image src="/pages/index/images/sao.jpg" class="icon-sao" bindtap="saoBtn"></image>
 </view>
 <!-- 头图幻灯片 -->
@@ -87,11 +109,12 @@
     </view>
   </view>
   <!-- 分享 -->
-  <view style="display: flex;">
-  <button type="success" size="mini" bindtap='getData'>获取数据</button>
+  <view>
+  <!-- <button type="warn" size="mini" bindtap='getData'>获取数据</button> -->
     <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}"  style='margin-left: auto;'>
       <view class="picker">
-        <button size='mini' type="primary" open-type='share'>分享</button>{{array[index]}}
+      <!-- 调取分享  open-type='share' -->
+        <button size='mini' type="primary">分享</button>{{array[index]}}
       </view>
     </picker>
   </view>

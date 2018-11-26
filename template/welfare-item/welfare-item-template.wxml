@@ -1,0 +1,37 @@
+<template name="welfare-template">
+  <view class="welfare_title" wx:if="{{who}}">{{who}}</view>
+  
+  <!-- Android && iOS-->
+  <!--   style="height: {{imgheights[current]}}rpx;" -->
+  <swiper 
+  wx:if="{{type == 'Android' || type == 'iOS'}}"
+  indicator-dots
+  autoplay
+  circular
+  bindchange="bindchange"  
+  circular="{{circular}}"
+  class="swiper"
+  catch:tap="btnVideoPost"
+  data-url="{{url}}"
+  data-_id="{{_id}}"
+  data-type="{{type}}"
+  >
+    <swiper-item wx:for="{{images.length > 0 ? images : ['/images/douyin.gif']}}" wx:for-item="val" wx:for-index="index" wx:key="{{index}}">
+      <image src="{{val}}" lazy-load="true" mode="widthFix" style="width: 100%;" bindload="imageLoad"></image>
+      
+    </swiper-item>
+  </swiper>
+
+<!-- 福利 -->
+<image src="{{url}}" lazy-load="true" class="welfare_images" mode="widthFix" wx:if="{{type == '福利'}}"></image>
+<!-- 休息视频 -->
+<image src="/images/douyin.gif" class="welfare_images" mode="widthFix" wx:if="{{type == '休息视频'}}" catch:tap="btnVideoPost" data-_id="{{_id}}" data-type="{{type}}" data-url="{{url}}"></image>
+<!-- 拓展资源 -->
+<image src="/images/kuozhan.png" class="welfare_images" mode="widthFix" wx:if="{{type == '拓展资源'}}" catch:tap="btnVideoPost" data-_id="{{_id}}" data-type="{{type}}" data-url="{{url}}"></image>
+<!-- web前端 -->
+<image src="/images/web.jpg" class="welfare_images" mode="widthFix" wx:if="{{type == '前端'}}" catch:tap="btnVideoPost" data-_id="{{_id}}" data-type="{{type}}" data-url="{{url}}"></image>
+
+<view class="welfare_time">
+  <text class="welfare_date1" wx:if="{{createdAt}}">上传时间：{{createdAt}}</text> 
+</view>
+</template>

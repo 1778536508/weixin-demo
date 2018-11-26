@@ -1,3 +1,8 @@
+/**
+ * font-size 图标
+ * @-ms-viewport
+ */
+@import "/font-awesome-4.7.0/stylesheet.wxss";
 /**app.wxss**/
 .container {
   height: 100%;

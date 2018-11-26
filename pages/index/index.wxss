@@ -1,8 +1,3 @@
-/**
- * font-size 图标
- * @-ms-viewport
- */
-@import "/font-awesome-4.7.0/stylesheet.wxss";
 /**index.wxss**/
 @import "/template/base.wxss";
 @import "/template/index-item/index-item-template.wxss";
@@ -138,7 +133,7 @@
 
 
 .recommend-list {
-  margin-bottom: 55rpx;
+  margin-bottom: 150rpx;
 }
 .input-box {
   width: 750rpx;
@@ -147,6 +142,10 @@
   box-sizing: border-box;
   padding: 19rpx 40rpx;
   box-shadow: -5rpx 5rpx 20rpx 1rpx rgba(151, 151, 151, .3);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: #fff;
 }
 .input-box input {
   width: 480rpx;
@@ -179,26 +178,27 @@
   display: flex;
 }
 .icon-iphone {
-  width: 100rpx;
-  height: 100rpx;
+  width:60rpx;
+  height:60rpx;
   margin-right: auto;
 }
 .icon-sao {
   margin-right: 20rpx;
   margin-top: 25rpx;
-  width: 70rpx;
-  height: 50rpx;
+  width: 40rpx;
+  height: 30rpx;
 }
 .num-power {
    margin-right: auto;
    margin-top: 20rpx;
+   font-size: 20rpx;
 }
 .video-admin {
   display: block;
   width: 750rpx;
   height: 300rpx;
   position: absolute;
-  top: 109rpx;
+  top: 70rpx;
   left: 0rpx;
 }
 .BtnSendOut {

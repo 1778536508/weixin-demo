@@ -1,0 +1,21 @@
+<import src="/template/welfare-item/welfare-item-template.wxml"/>
+<!-- <import src="/template/progress-item/progress-item-template.wxml"/> -->
+<!-- <template is="progress-item" wx:if="{{progress != 100}}" data="{{...{progress: progress} }}"></template> -->
+<view>
+  <view wx:for="{{reading}}" wx:for-item="item" wx:for-index="index" data-uid="{{item._id}}" wx:key="{{index}}" class="welfare_list">
+    <template is="welfare-template" data="{{...item, ...{imgheights: imgheights, circular: circular, current: current} }}"/>
+  </view>
+</view>
+<view class="refresh-block" wx:if="{{loading}}">
+ <i class="fa fa-spinner fa-pulse"></i>
+</view>
+ <!-- <cover-view class="refresh-block fa fa-spinner fa-pulse" wx:if="{{loading}}" >
+  </cover-view> -->
+ <cover-view class="fa fa-arrow-circle-o-up roof_placement" catch:tap="roofPlacement"></cover-view>
+  <view>
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" range="{{multiArray}}" value="{{multiIndex}}">
+      <button class='minToptab'><icon class="fa fa-list-alt"></icon></button>
+    </picker>
+  </view>
+  <!-- <cover-view wx:if="{{!imgheights[current] && keyword=='Android'}}" class="blank_page"></cover-view> -->
+  

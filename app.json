@@ -1,15 +1,46 @@
 {
   "pages":[
-    
     "pages/index/index",
+    "pages/reading/reading",
     "pages/logs/logs",
-    "pages/list/list"
+    "pages/list/list",
+    "pages/web-view/web-view"
   ],
   "window":{
-    "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "ndy-wx-demo",
     "navigationBarTextStyle": "black",
-    "backgroundTextStyle": "light"
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/home2.png",
+        "selectedIconPath": "/images/home.png"
+      },
+      {
+        "pagePath": "pages/reading/reading",
+        "text": "福利",
+        "iconPath": "/images/fuli2.png",
+        "selectedIconPath": "/images/fuli.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志",
+        "iconPath": "/images/rizi2.png",
+        "selectedIconPath": "/images/rizi.png"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "分类",
+        "iconPath": "/images/list2.png",
+        "selectedIconPath": "/images/list.png"
+      }
+    ]
   }
 }
