@@ -1,0 +1,17 @@
+<template name="performer-template">
+  <image src="{{val.avatars.medium}}" mode="widthFix" lazy-load></image>
+  <view class="douban-movies-character-list-text">
+    <view>
+      <text>{{val.name}}</text>
+    </view>
+    <view>
+      <text>{{val.name_en}}</text>
+    </view>
+    <view style="padding-top: 15rpx;">
+      <view class='douban-movies-character-list-text-brief'>
+        <text>简介</text>
+        <i class="fa fa-angle-right"></i>
+      </view>
+    </view>
+  </view>
+</template>

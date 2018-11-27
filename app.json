@@ -9,15 +9,17 @@
     "pages/web-view/web-view"
   ],
   "window":{
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "ndy-wx-demo",
-    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTextStyle": "white",
     "backgroundTextStyle": "dark",
     "enablePullDownRefresh": true
   },
   "tabBar": {
     "borderStyle": "white",
     "position": "bottom",
+    "backgroundColor": "#000",
+    "color": "#ADADAD",
+    "selectedColor": "#FFFFFF",
     "list": [
       {
         "pagePath": "pages/douban/douban",

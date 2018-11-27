@@ -1,0 +1,68 @@
+<import src="/template/douban-item/performer-item/performer-item-template.wxml"/>
+<template name="douban-template">
+  <scroll-view id='domeView'>
+    <view class="douban-title">
+      <text>{{type}}</text>
+    </view>
+    <view class="douban-movies">
+      <view wx:for="{{content}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}" class="douban-movies-row">
+
+        <view class="douban-movies-cover" capture-catch:tap="btnDetails" data-url="{{item.alt}}" data-_id="{{item.id}}" data-type="豆瓣影视">
+          <image src="{{item.images.large}}" mode="widthFix" lazy-load="true"></image>
+        </view>
+
+        <view>
+          <text>影片名：{{item.title}}</text>
+        </view>
+        <view>
+          <text>ID：{{item.id}}</text>
+        </view>
+        <view class="douban-movies-rating">
+          <text>评分：</text>
+          <i class="fa {{item.rating.average >= 2 ? 'fa-heart' : 'fa-heart-o'}}"></i>
+          <i class="fa {{item.rating.average >= 4 ? 'fa-heart' : 'fa-heart-o'}}"></i>
+          <i class="fa {{item.rating.average >= 6 ? 'fa-heart' : 'fa-heart-o'}}"></i>
+          <i class="fa {{item.rating.average >= 8 ? 'fa-heart' : 'fa-heart-o'}}"></i>
+          <i class="fa {{item.rating.average >= 10 ? 'fa-heart' : 'fa-heart-o'}}"></i>
+          <text> {{item.rating.average}}</text>
+        </view>
+        <view>
+          <text>时长: {{item.durations[0]}}</text>
+        </view>
+
+        <view>
+          <text>分类： {{item.genres}}</text>
+        </view>
+        <view style="margin-top: 10rpx; margin-bottom: 5rpx;" catch:tap="btnAnimation" data-id="{{item.id}}">
+          <text>主演：</text>
+          <i class="fa fa-angle-up" animation="{{item.angleup}}"></i>
+        </view>
+
+
+
+        <swiper vertical autoplay circular style="height:0;" animation="{{item.animHeight}}">
+          <swiper-item style="height:400rpx;">
+            <view class="douban-movies-character">
+              <view wx:for="{{item.casts}}" wx:for-item="val" wx:for-index="key" wx:key="key" class="douban-movies-character-list" capture-catch:tap="btnDetails" data-url="{{val.alt}}" data-_id="{{val.id}}" data-type="豆瓣影视">
+                <template is="performer-template" data="{{val}}"></template>
+              </view>
+            </view>
+          </swiper-item>
+          <swiper-item style="height:400rpx;">
+            <view class="douban-movies-character" capture-catch:tap="btnDetails" data-url="{{item.directors[0].alt}}" data-_id="{{item.directors[0].id}}" data-type="豆瓣影视">
+              <view class="douban-movies-character-image">
+                <image src="{{item.directors[0].avatars.large}}" mode="widthFix" lazy-load></image>
+              </view>
+              <view>
+                <text>{{item.directors[0].name}}</text>
+              </view>
+              <view>
+                <text>{{item.directors[0].name_en}}</text>
+              </view>
+            </view>
+          </swiper-item>
+        </swiper>
+      </view>
+    </view>
+  </scroll-view>
+</template>  
